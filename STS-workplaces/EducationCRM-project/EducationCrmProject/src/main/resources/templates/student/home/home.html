@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Course catalogue')}"></head>
+<body>
+<nav th:replace="~{fragments/student-navbar :: navbar('courses')}"></nav>
+<main class="student-page"><div class="container">
+    <div class="page-heading"><h1>Course catalogue</h1><p class="text-muted">Choose a program and complete the demo checkout to enroll.</p></div>
+    <div class="row g-4" th:if="${!#lists.isEmpty(courses)}">
+        <div class="col-md-6 col-lg-4" th:each="course : ${courses}"><article class="surface course-card"><div class="d-flex justify-content-between"><span class="badge-soft" th:text="${course.category}"></span><span class="small text-muted" th:text="${course.level}"></span></div><h2 class="h5 mt-3" th:text="${course.title}"></h2><p class="text-muted" th:text="${#strings.abbreviate(course.description, 150)}"></p><div class="d-flex justify-content-between align-items-center"><span class="price" th:text="${'₹' + course.price}"></span><span class="text-muted" th:text="${course.duration + ' hours'}"></span></div><a class="btn btn-primary w-100 mt-3" th:href="@{/student/course/{id}(id=${course.id})}">View course</a></article></div>
+    </div>
+    <div class="surface empty-state" th:if="${#lists.isEmpty(courses)}">No active courses are available.</div>
+</div></main>
+<script th:replace="~{fragments/alerts :: scripts}"></script>
+</body></html>

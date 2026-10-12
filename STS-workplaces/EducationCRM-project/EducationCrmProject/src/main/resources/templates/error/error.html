@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Error')}"></head>
+<body class="auth-page"><main class="surface auth-card text-center"><div class="display-4 text-danger" th:text="${status}">Error</div><h1 class="h3 mt-3" th:text="${title}">Something went wrong</h1><p class="text-muted" th:text="${message}">Please try again.</p><a class="btn btn-primary" th:href="@{/}">Go to home</a></main></body>
+</html>

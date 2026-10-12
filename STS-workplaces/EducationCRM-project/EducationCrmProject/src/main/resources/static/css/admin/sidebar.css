@@ -1,0 +1,413 @@
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: #0f172a;
+	color: #ffffff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all .35s ease;
+	box-shadow: 4px 0 24px rgba(0, 0, 0, .15);
+	z-index: 1000;
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+.sidebar::-webkit-scrollbar {
+	width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+	background: #0f172a;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+	background: #334155;
+	border-radius: 20px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+	background: #475569;
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+.sidebar-logo {
+	text-align: center;
+	padding: 26px 20px;
+	border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.sidebar-logo a {
+	text-decoration: none;
+}
+
+.sidebar-logo img {
+	width: 60px;
+	height: 60px;
+	object-fit: contain;
+	margin-bottom: 14px;
+	transition: .3s;
+}
+
+.sidebar-logo h4 {
+	margin: 0;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.25;
+	color: #ffffff;
+}
+
+.sidebar-logo small {
+	display: block;
+	margin-top: 8px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #94a3b8;
+}
+
+/* ==========================================================
+   MENU
+========================================================== */
+.sidebar-menu {
+	flex: 1;
+	list-style: none;
+	margin: 0;
+	padding: 18px 12px;
+}
+
+.sidebar-menu li {
+	margin-bottom: 8px;
+}
+
+/* ==========================================================
+   MAIN MENU
+========================================================== */
+.sidebar-menu li>a, .submenu-btn {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 13px 16px;
+	border: none;
+	border-radius: 12px;
+	background: transparent;
+	color: #cbd5e1;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all .25s ease;
+}
+
+/* Left Side */
+.sidebar-menu li>a div, .submenu-btn div {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+/* Text */
+.sidebar-menu li>a span, .submenu-btn span {
+	font-size: 15px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+/* Icons */
+.sidebar-menu li>a i, .submenu-btn i {
+	width: 22px;
+	min-width: 22px;
+	font-size: 18px;
+	text-align: center;
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+.sidebar-menu li>a:hover, .submenu-btn:hover {
+	background: #1e40af;
+	color: #ffffff;
+	transform: translateX(4px);
+}
+
+/* ==========================================================
+   ACTIVE LINK
+========================================================== */
+.sidebar-menu li>a.active {
+	background: linear-gradient(90deg, #2563eb, #3b82f6);
+	color: #ffffff;
+	box-shadow: 0 10px 20px rgba(37, 99, 235, .25);
+}
+
+/* ==========================================================
+   SUBMENU
+========================================================== */
+.submenu-list {
+	list-style: none;
+	margin-top: 8px;
+	margin-bottom: 10px;
+	margin-left: 0;
+	padding-left: 0;
+	display: none;
+}
+
+.submenu-list li {
+	padding-left: 32px;
+}
+
+.submenu.active .submenu-list {
+	display: block;
+}
+
+.submenu-list li {
+	margin: 4px 0;
+}
+
+.submenu-list a {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start !important;
+	gap: 12px;
+	padding: 10px 16px;
+	width: 100%;
+	color: #cbd5e1;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+.submenu-list a i {
+	width: 18px;
+	min-width: 18px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.submenu-list a:hover {
+	background: #1e40af;
+	color: #ffffff;
+	transform: translateX(4px);
+}
+
+/* ==========================================================
+   DROPDOWN ARROW
+========================================================== */
+.arrow {
+	font-size: 13px;
+	transition: .3s ease;
+}
+
+.submenu.active .arrow {
+	transform: rotate(180deg);
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+.sidebar-footer {
+	padding: 20px 16px;
+	border-top: 1px solid rgba(255, 255, 255, .08);
+	margin-top: auto;
+}
+
+/* Logout Button */
+.sidebar-footer a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	width: 100%;
+	padding: 13px 18px;
+	background: #ef4444;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 12px;
+	font-size: 15px;
+	font-weight: 600;
+	transition: all .3s ease;
+}
+
+.sidebar-footer a:hover {
+	background: #dc2626;
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(239, 68, 68, .25);
+}
+
+.sidebar-footer a i {
+	font-size: 18px;
+}
+
+/* ==========================================================
+   COLLAPSED SIDEBAR
+========================================================== */
+.sidebar.collapsed {
+	width: 80px;
+}
+
+/* Logo */
+.sidebar.collapsed .sidebar-logo {
+	padding: 18px 10px;
+}
+
+.sidebar.collapsed .sidebar-logo img {
+	width: 42px;
+	height: 42px;
+	margin-bottom: 0;
+}
+
+.sidebar.collapsed .sidebar-logo h4, .sidebar.collapsed .sidebar-logo small
+	{
+	display: none;
+}
+
+/* Menu */
+.sidebar.collapsed .sidebar-menu {
+	padding: 18px 8px;
+}
+
+.sidebar.collapsed .sidebar-menu li {
+	margin-bottom: 8px;
+}
+
+/* Normal menu */
+.sidebar.collapsed .sidebar-menu li>a {
+	justify-content: center;
+	padding: 14px;
+}
+
+.sidebar.collapsed .sidebar-menu li>a span {
+	display: none;
+}
+
+.sidebar.collapsed .sidebar-menu li>a div {
+	justify-content: center;
+	width: 100%;
+}
+
+.sidebar.collapsed .sidebar-menu li>a i {
+	margin: 0;
+	width: auto;
+	font-size: 20px;
+}
+
+/* Submenu */
+.sidebar.collapsed .submenu-btn {
+	justify-content: center;
+	padding: 14px;
+}
+
+.sidebar.collapsed .submenu-btn div {
+	justify-content: center;
+	width: 100%;
+	gap: 0;
+}
+
+.sidebar.collapsed .submenu-btn span {
+	display: none;
+}
+
+.sidebar.collapsed .submenu-btn .arrow {
+	display: none;
+}
+
+.sidebar.collapsed .submenu-btn i {
+	margin: 0;
+	width: auto;
+	font-size: 20px;
+}
+
+/* Hide all child menus */
+.sidebar.collapsed .submenu-list {
+	display: none !important;
+}
+
+/* Footer */
+.sidebar.collapsed .sidebar-footer {
+	padding: 15px 8px;
+}
+
+.sidebar.collapsed .sidebar-footer a {
+	justify-content: center;
+	padding: 14px;
+}
+
+.sidebar.collapsed .sidebar-footer a span {
+	display: none;
+}
+
+.sidebar.collapsed .sidebar-footer a i {
+	margin: 0;
+	font-size: 20px;
+}
+
+/* ==========================================================
+                MAIN CONTENT
+========================================================== */
+.main-content {
+	margin-left: 280px;
+	width: calc(100% - 280px);
+	transition: .35s ease;
+}
+
+/* When Sidebar is collapsed */
+.main-content.expanded {
+	margin-left: 80px;
+	width: calc(100% - 80px)
+}
+
+/* ==========================================================
+   COLLAPSED TOOLTIP
+========================================================== */
+.sidebar.collapsed .sidebar-menu li {
+	position: relative;
+}
+
+.sidebar.collapsed .sidebar-menu li::after {
+	content: attr(data-title);
+	position: absolute;
+	left: 88px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: #111827;
+	color: #fff;
+	padding: 8px 12px;
+	border-radius: 8px;
+	font-size: 13px;
+	white-space: nowrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: .25s;
+	pointer-events: none;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+}
+
+.sidebar.collapsed .sidebar-menu li:hover::after {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* ==========================================================
+                RESPONSIVE
+========================================================== */
+@media ( max-width :992px) {
+	.sidebar {
+		left: -280px;
+		width: 280px;
+	}
+	.sidebar.show {
+		left: 0;
+	}
+	.main-content {
+		margin-left: 0;
+		width: 100%;
+	}
+}

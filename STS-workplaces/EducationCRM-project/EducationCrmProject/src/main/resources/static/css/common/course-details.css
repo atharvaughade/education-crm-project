@@ -1,0 +1,86 @@
+/* ==========================================
+   COURSE DETAILS PAGE STYLES
+   ========================================== */
+
+/* Dark Hero Banner */
+.course-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+}
+
+.course-header .breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.course-header .breadcrumb-item a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.course-header .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Sticky Purchase Card */
+.sticky-purchase-card {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* General Card Styling */
+.card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Accordion Styling */
+.accordion-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px !important;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.accordion-button {
+    background-color: #f8fafc;
+    font-weight: 600;
+    color: #334155;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #eff6ff;
+    color: #2563eb;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #e2e8f0;
+}
+
+/* Progress Bars in Reviews */
+.progress {
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    height: 8px !important;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* Review Cards */
+.bg-light {
+    background-color: #f8fafc !important;
+}

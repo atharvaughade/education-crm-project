@@ -1,0 +1,17 @@
+footer{
+    background:#212529;
+}
+
+footer a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+footer a:hover{
+    color:#0d6efd;
+}
+
+footer span{
+    font-size:15px;
+}

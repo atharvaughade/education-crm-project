@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Edit course')}"></head>
+<body><div class="app-shell"><aside th:replace="~{fragments/admin-sidebar :: sidebar('courses')}"></aside><main class="app-main"><header th:replace="~{fragments/admin-topbar :: topbar('Edit course')}"></header><div th:replace="~{admin/courses/form :: form('Save changes')}"></div></main></div></body></html>

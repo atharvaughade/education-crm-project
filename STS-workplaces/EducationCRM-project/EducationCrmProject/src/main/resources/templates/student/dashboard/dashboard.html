@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Student dashboard')}"></head>
+<body>
+<nav th:replace="~{fragments/student-navbar :: navbar('dashboard')}"></nav>
+<main class="student-page"><div class="container">
+    <div th:replace="~{fragments/alerts :: alerts}"></div>
+    <div class="page-heading"><h1>Welcome, <span th:text="${student.firstName}">Student</span></h1><p class="text-muted">Continue your learning journey and track your progress.</p></div>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4"><div class="surface metric"><div class="metric-value" th:text="${enrollmentCount}">0</div><div class="metric-label">Enrolled courses</div></div></div>
+        <div class="col-md-4"><div class="surface metric"><div class="metric-value" th:text="${completedCount}">0</div><div class="metric-label">Completed courses</div></div></div>
+        <div class="col-md-4"><div class="surface metric"><div class="metric-value" th:text="${availableCourseCount}">0</div><div class="metric-label">Available courses</div></div></div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-3"><h2 class="h4 mb-0">Recent learning</h2><a th:href="@{/student/learning}">View all</a></div>
+    <div class="row g-4" th:if="${!#lists.isEmpty(enrollments)}">
+        <div class="col-lg-4" th:each="enrollment : ${enrollments}"><div class="surface course-card"><span class="badge-soft" th:text="${enrollment.status}"></span><h3 class="h5 mt-3" th:text="${enrollment.course.title}"></h3><div class="d-flex justify-content-between small mb-2"><span>Progress</span><span th:text="${enrollment.progress + '%'}"></span></div><div class="progress"><div class="progress-bar" th:style="${'width:' + enrollment.progress + '%'}"></div></div></div></div>
+    </div>
+    <div class="surface empty-state" th:if="${#lists.isEmpty(enrollments)}"><h2 class="h5">No enrollments yet</h2><p>Browse the catalogue and choose your first course.</p><a class="btn btn-primary" th:href="@{/student/home}">Browse courses</a></div>
+</div></main>
+<script th:replace="~{fragments/alerts :: scripts}"></script>
+</body></html>

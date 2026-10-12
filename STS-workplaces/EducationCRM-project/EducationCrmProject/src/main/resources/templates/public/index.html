@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Learn job-ready skills')}"></head>
+<body>
+<nav class="navbar navbar-expand-lg site-nav navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" th:href="@{/}"><img class="logo" th:src="@{/images/sp-logo.jpg}" alt="Education CRM"> <span th:text="${settings['academy.name']}">Education CRM Academy</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#publicNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="publicNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="btn btn-outline-light btn-sm" th:href="@{/auth/login}">Sign in</a></li>
+                <li class="nav-item"><a class="btn btn-warning btn-sm" th:href="@{/auth/signup}">Create account</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark mb-3">Learn. Practice. Get career-ready.</span>
+                <h1>Build practical technology skills with guided courses.</h1>
+                <p class="lead mt-4 mb-4">Browse structured programs, enroll securely, and track your learning from one dashboard.</p>
+                <a class="btn btn-warning btn-lg me-2" th:href="@{/auth/signup}">Start learning</a>
+                <a class="btn btn-outline-light btn-lg" href="#courses">Explore courses</a>
+            </div>
+            <div class="col-lg-5 text-center"><img class="img-fluid rounded-4 shadow" th:src="@{/images/education-banner.avif}" alt="Students learning online"></div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="section" id="courses">
+        <div class="container">
+            <div class="text-center mb-5"><h2 class="section-title">Active courses</h2><p class="text-muted">Programs currently open for enrollment</p></div>
+            <div class="row g-4" th:if="${!#lists.isEmpty(courses)}">
+                <div class="col-md-6 col-lg-4" th:each="course : ${courses}">
+                    <article class="surface course-card">
+                        <span class="badge-soft" th:text="${course.category}">Category</span>
+                        <h3 class="h5 mt-3" th:text="${course.title}">Course title</h3>
+                        <p class="text-muted" th:text="${#strings.abbreviate(course.description, 130)}">Description</p>
+                        <div class="d-flex justify-content-between align-items-center mt-4"><span class="price" th:text="${'₹' + course.price}">₹0</span><span class="text-muted" th:text="${course.duration + ' hours'}">0 hours</span></div>
+                        <a class="btn btn-primary w-100 mt-3" th:href="@{/auth/signup}">Register to enroll</a>
+                    </article>
+                </div>
+            </div>
+            <div class="surface empty-state" th:if="${#lists.isEmpty(courses)}">Courses will appear here when an administrator activates them.</div>
+        </div>
+    </section>
+
+    <section class="section bg-white" id="contact">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-5"><h2 class="section-title">Talk to admissions</h2><p class="text-muted">Tell us what you want to learn. Your inquiry appears directly in the administrator CRM.</p><p><i class="bi bi-envelope me-2"></i><span th:text="${settings['academy.email']}"></span></p><p><i class="bi bi-telephone me-2"></i><span th:text="${settings['academy.phone']}"></span></p><p><i class="bi bi-geo-alt me-2"></i><span th:text="${settings['academy.address']}"></span></p></div>
+                <div class="col-lg-7">
+                    <div class="surface p-4">
+                        <div th:replace="~{fragments/alerts :: alerts}"></div>
+                        <form th:action="@{/inquiries}" th:object="${inquiry}" method="post" novalidate>
+                            <div th:if="${#fields.hasGlobalErrors()}" class="alert alert-danger" th:each="error : ${#fields.globalErrors()}" th:text="${error}"></div>
+                            <div class="row g-3">
+                                <div class="col-md-6"><label class="form-label">Name</label><input class="form-control" th:field="*{name}"><div class="field-error" th:errors="*{name}"></div></div>
+                                <div class="col-md-6"><label class="form-label">Email</label><input class="form-control" type="email" th:field="*{email}"><div class="field-error" th:errors="*{email}"></div></div>
+                                <div class="col-md-6"><label class="form-label">Mobile</label><input class="form-control" th:field="*{mobile}"><div class="field-error" th:errors="*{mobile}"></div></div>
+                                <div class="col-md-6"><label class="form-label">Course interest</label><input class="form-control" th:field="*{courseInterest}"></div>
+                                <div class="col-12"><label class="form-label">Message</label><textarea class="form-control" rows="4" th:field="*{message}"></textarea><div class="field-error" th:errors="*{message}"></div></div>
+                                <div class="col-12"><button class="btn btn-primary" type="submit">Send inquiry</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer"><div class="container d-flex justify-content-between flex-wrap gap-2"><span th:text="${settings['academy.name']}">Education CRM Academy</span><span>Spring Boot education CRM</span></div></footer>
+<script th:replace="~{fragments/alerts :: scripts}"></script>
+</body>
+</html>

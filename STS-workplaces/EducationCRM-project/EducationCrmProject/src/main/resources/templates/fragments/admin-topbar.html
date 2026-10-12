@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="topbar(title)" class="topbar">
+    <div><h1 th:text="${title}">Admin</h1><div class="text-muted">Secure administration workspace</div></div>
+    <div class="text-end"><strong th:text="${currentUserName}">Administrator</strong><div class="text-muted small">Administrator</div></div>
+</header>
+</body>
+</html>

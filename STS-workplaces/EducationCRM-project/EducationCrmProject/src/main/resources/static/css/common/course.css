@@ -1,0 +1,131 @@
+.card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    height:100%;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+}
+
+.card-title{
+    font-weight:600;
+}
+
+.card-text{
+    color:#6c757d;
+}
+
+.card .btn{
+    width:100%;
+}
+
+.card-footer{
+    background:white;
+    border:none;
+    font-size:14px;
+}
+
+.bg-info{
+    border-radius:5px;
+}
+
+/* ==========================================
+   COURSE CARD STYLES
+========================================== */
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+/* Hover Animation - Card moves upward */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Image zoom on hover */
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card Body */
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #6c757d;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Price Styling */
+.card del {
+    font-size: 14px;
+    color: #999;
+}
+
+.card .fs-5 {
+    font-size: 20px;
+}
+
+/* Button */
+.card .btn {
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* Badges */
+.card .badge {
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Card Footer */
+.card-footer {
+    background: white;
+    border: none;
+    font-size: 14px;
+    padding: 12px 20px;
+}

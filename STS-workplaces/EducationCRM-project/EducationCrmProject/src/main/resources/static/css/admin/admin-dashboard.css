@@ -1,0 +1,880 @@
+/* ==========================================================
+                    GOOGLE FONT
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ==========================================================
+                    GLOBAL
+========================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f8fafc;
+
+    color:#1e293b;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================================
+                    DASHBOARD LAYOUT
+========================================================== */
+
+.dashboard-wrapper{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+.main-content{
+
+    margin-left:240px;
+
+    width:calc(100% - 240px);
+
+    transition:.35s ease;
+
+    background:#f8fafc;
+
+}
+
+.main-content.expanded{
+
+    margin-left:75px;
+
+    width:calc(100% - 75px);
+
+}
+
+/* ==========================================================
+                    DASHBOARD BODY
+========================================================== */
+
+.dashboard-content{
+
+    padding:30px;
+
+}
+
+/* ==========================================================
+                    WELCOME BANNER
+========================================================== */
+
+.welcome-banner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 35px rgba(15,23,42,.06);
+
+    margin-bottom:30px;
+
+}
+
+.welcome-banner h2{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+    margin-bottom:8px;
+
+}
+
+.welcome-banner p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+    margin:0;
+
+}
+
+.welcome-banner .btn{
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+                    DASHBOARD CARDS
+========================================================== */
+
+.dashboard-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    height:130px;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(15,23,42,.12);
+
+}
+
+/* ==========================================================
+                    CARD ICON
+========================================================== */
+
+.card-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    color:#fff;
+
+}
+
+/* Students */
+
+.card-icon.students{
+
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+
+}
+
+/* Courses */
+
+.card-icon.courses{
+
+    background:linear-gradient(135deg,#10b981,#059669);
+
+}
+
+/* Employees */
+
+.card-icon.employees{
+
+    background:linear-gradient(135deg,#f59e0b,#d97706);
+
+}
+
+/* Revenue */
+
+.card-icon.revenue{
+
+    background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+
+}
+
+/* ==========================================================
+                    CARD TEXT
+========================================================== */
+
+.dashboard-card small{
+
+    color:#64748b;
+
+    font-size:14px;
+
+    display:block;
+
+    margin-bottom:8px;
+
+}
+
+.dashboard-card h3{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin:0;
+
+    color:#0f172a;
+
+}
+
+/* ==========================================================
+                    GROWTH
+========================================================== */
+
+.growth{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.growth.positive{
+
+    color:#16a34a;
+
+}
+
+.growth.negative{
+
+    color:#dc2626;
+
+}
+
+/* ==========================================================
+                    CARD HOVER EFFECT
+========================================================== */
+
+.dashboard-card:hover .card-icon{
+
+    transform:scale(1.08) rotate(6deg);
+
+    transition:.35s;
+
+}
+
+/* ==========================================================
+                    CONTENT CARDS
+========================================================== */
+
+.content-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+    transition:.3s;
+
+    height:100%;
+
+}
+
+.content-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(15,23,42,.10);
+
+}
+
+/* ==========================================================
+                    CARD HEADER
+========================================================== */
+
+.card-header-custom{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+.card-header-custom h5{
+
+    margin:0;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#0f172a;
+
+}
+
+/* ==========================================================
+                    CHART PLACEHOLDER
+========================================================== */
+
+.chart-placeholder{
+
+    height:320px;
+
+    border:2px dashed #cbd5e1;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#f8fafc;
+
+    color:#64748b;
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+                    RECENT ACTIVITY
+========================================================== */
+
+.activity-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.activity-list li{
+
+    position:relative;
+
+    padding:15px 0 15px 28px;
+
+    border-bottom:1px solid #f1f5f9;
+
+    color:#475569;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+.activity-list li:last-child{
+
+    border-bottom:none;
+
+}
+
+.activity-list li::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:6px;
+
+    top:22px;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+}
+
+.activity-list li:hover{
+
+    padding-left:36px;
+
+    color:#2563eb;
+
+}
+
+/* ==========================================================
+                    BUTTONS
+========================================================== */
+
+.btn-primary{
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    padding:10px 18px;
+
+}
+
+.btn-outline-primary{
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+                    TABLE SECTION
+========================================================== */
+
+.table-responsive{
+
+    margin-top:20px;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================================
+                    TABLE
+========================================================== */
+
+.table{
+
+    margin:0;
+
+    background:#ffffff;
+
+    vertical-align:middle;
+
+}
+
+.table thead{
+
+    background:#f8fafc;
+
+}
+
+.table thead th{
+
+    padding:18px 20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#475569;
+
+    border:none;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+.table tbody td{
+
+    padding:18px 20px;
+
+    border-top:1px solid #eef2f7;
+
+    font-size:15px;
+
+    color:#334155;
+
+}
+
+.table tbody tr{
+
+    transition:.25s;
+
+}
+
+.table tbody tr:hover{
+
+    background:#f8fbff;
+
+}
+
+/* ==========================================================
+                    STATUS BADGES
+========================================================== */
+
+.badge{
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:.3px;
+
+}
+
+.badge.bg-success{
+
+    background:#dcfce7 !important;
+
+    color:#15803d !important;
+
+}
+
+.badge.bg-warning{
+
+    background:#fef3c7 !important;
+
+    color:#b45309 !important;
+
+}
+
+.badge.bg-danger{
+
+    background:#fee2e2 !important;
+
+    color:#dc2626 !important;
+
+}
+
+.badge.bg-primary{
+
+    background:#dbeafe !important;
+
+    color:#1d4ed8 !important;
+
+}
+
+/* ==========================================================
+                    ACTION BUTTON
+========================================================== */
+
+.table .btn{
+
+    border-radius:8px;
+
+    font-size:13px;
+
+    padding:7px 16px;
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+                    VIEW ALL BUTTON
+========================================================== */
+
+.card-header-custom .btn{
+
+    border-radius:10px;
+
+    padding:8px 16px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+                    TABLE SCROLLBAR
+========================================================== */
+
+.table-responsive::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.table-responsive::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:30px;
+
+}
+
+.table-responsive::-webkit-scrollbar-track{
+
+    background:#f1f5f9;
+
+}
+
+/* ==========================================================
+                    RESPONSIVE DESIGN
+========================================================== */
+
+@media (max-width: 1200px){
+
+    .dashboard-card{
+
+        margin-bottom:20px;
+
+    }
+
+}
+
+/* Tablet */
+
+@media (max-width: 992px){
+
+    .dashboard-content{
+
+        padding:20px;
+
+    }
+
+    .welcome-banner{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .welcome-banner .btn{
+
+        width:100%;
+
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .dashboard-content{
+
+        padding:15px;
+
+    }
+
+    .welcome-banner{
+
+        padding:20px;
+
+    }
+
+    .welcome-banner h2{
+
+        font-size:24px;
+
+    }
+
+    .dashboard-card{
+
+        height:auto;
+
+        padding:20px;
+
+    }
+
+    .card-icon{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:26px;
+
+    }
+
+    .dashboard-card h3{
+
+        font-size:24px;
+
+    }
+
+    .chart-placeholder{
+
+        height:220px;
+
+    }
+
+    .card-header-custom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:576px){
+
+    .dashboard-content{
+
+        padding:12px;
+
+    }
+
+    .welcome-banner{
+
+        border-radius:14px;
+
+    }
+
+    .content-card{
+
+        padding:18px;
+
+    }
+
+    .dashboard-card{
+
+        border-radius:14px;
+
+    }
+
+}
+
+/* ==========================================================
+                    SMOOTH ANIMATIONS
+========================================================== */
+
+.dashboard-card,
+.content-card,
+.welcome-banner{
+
+    animation:fadeUp .6s ease;
+
+}
+
+/* Fade Animation */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+                    CUSTOM SELECTION
+========================================================== */
+
+::selection{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+                    REMOVE BOOTSTRAP FOCUS
+========================================================== */
+
+button:focus,
+input:focus,
+.btn:focus{
+
+    box-shadow:none !important;
+
+    outline:none;
+
+}
+
+/* ==========================================================
+                    DASHBOARD SPACING
+========================================================== */
+
+.row{
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================================
+                    OPTIONAL GLASS EFFECT
+========================================================== */
+
+.glass{
+
+    background:rgba(255,255,255,.8);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+}

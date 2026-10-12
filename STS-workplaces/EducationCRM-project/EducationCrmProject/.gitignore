@@ -1,0 +1,29 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Local secrets and runtime files ###
+src/main/resources/application-local.properties
+.env
+*.log
+uploads/
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/

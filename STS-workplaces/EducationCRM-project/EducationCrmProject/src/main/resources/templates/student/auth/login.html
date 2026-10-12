@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Sign in')}"></head>
+<body class="auth-page">
+<main class="surface auth-card">
+    <a class="d-flex align-items-center gap-2 fw-bold mb-4" th:href="@{/}"><img class="logo" th:src="@{/images/sp-logo.jpg}" alt="Education CRM"> Education CRM</a>
+    <div th:replace="~{fragments/alerts :: alerts}"></div>
+    <h1 class="h3" th:text="${adminMode} ? 'Administrator sign in' : 'Welcome back'">Welcome back</h1>
+    <p class="text-muted" th:text="${adminMode} ? 'Use your administrator credentials.' : 'Sign in to continue learning.'">Sign in</p>
+    <form th:action="@{/auth/login}" method="post" class="mt-4">
+        <input th:if="${adminMode}" type="hidden" name="admin" value="true">
+        <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control" id="email" name="email" type="email" autocomplete="username" required autofocus></div>
+        <div class="mb-3"><label class="form-label" for="password">Password</label><input class="form-control" id="password" name="password" type="password" autocomplete="current-password" required></div>
+        <button class="btn btn-primary w-100" type="submit">Sign in securely</button>
+    </form>
+    <div class="text-center mt-4" th:if="${!adminMode}">New student? <a th:href="@{/auth/signup}">Create an account</a></div>
+    <div class="text-center mt-2"><a th:href="@{/}">Return to home</a></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Administrator sign in')}"></head>
+<body class="auth-page"><main class="surface auth-card text-center"><h1 class="h3">Administrator sign in</h1><p class="text-muted">Authentication is handled by the shared Spring Security login.</p><a class="btn btn-primary" th:href="@{/auth/login(admin=true)}">Continue to secure login</a></main></body>
+</html>

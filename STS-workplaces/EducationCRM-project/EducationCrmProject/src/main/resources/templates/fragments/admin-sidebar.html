@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<aside th:fragment="sidebar(active)" class="sidebar">
+    <a class="sidebar-brand" th:href="@{/admin/dashboard}"><img class="logo" th:src="@{/images/sp-logo.jpg}" alt="Education CRM"> Admin CRM</a>
+    <div class="sidebar-label">Overview</div>
+    <a class="sidebar-link" th:classappend="${active == 'dashboard'} ? ' active'" th:href="@{/admin/dashboard}"><i class="bi bi-grid"></i> Dashboard</a>
+    <a class="sidebar-link" th:classappend="${active == 'profile'} ? ' active'" th:href="@{/admin/profile}"><i class="bi bi-person"></i> Profile</a>
+    <div class="sidebar-label">Management</div>
+    <a class="sidebar-link" th:classappend="${active == 'students'} ? ' active'" th:href="@{/admin/students}"><i class="bi bi-people"></i> Students</a>
+    <a class="sidebar-link" th:classappend="${active == 'courses'} ? ' active'" th:href="@{/admin/courses/view}"><i class="bi bi-journal-code"></i> Courses</a>
+    <a class="sidebar-link" th:classappend="${active == 'employees'} ? ' active'" th:href="@{/admin/employees}"><i class="bi bi-person-badge"></i> Employees</a>
+    <a class="sidebar-link" th:classappend="${active == 'enrollments'} ? ' active'" th:href="@{/admin/enrollments}"><i class="bi bi-mortarboard"></i> Enrollments</a>
+    <div class="sidebar-label">CRM</div>
+    <a class="sidebar-link" th:classappend="${active == 'inquiries'} ? ' active'" th:href="@{/admin/inquiries}"><i class="bi bi-chat-left-text"></i> Inquiries</a>
+    <a class="sidebar-link" th:classappend="${active == 'sales'} ? ' active'" th:href="@{/admin/sales}"><i class="bi bi-currency-rupee"></i> Sales</a>
+    <a class="sidebar-link" th:classappend="${active == 'feedback'} ? ' active'" th:href="@{/admin/feedback}"><i class="bi bi-star"></i> Feedback</a>
+    <a class="sidebar-link" th:classappend="${active == 'settings'} ? ' active'" th:href="@{/admin/settings}"><i class="bi bi-gear"></i> Settings</a>
+    <div class="sidebar-label">Session</div>
+    <form th:action="@{/logout}" method="post"><button class="sidebar-link border-0 w-100 text-start" type="submit"><i class="bi bi-box-arrow-right"></i> Sign out</button></form>
+</aside>
+</body>
+</html>

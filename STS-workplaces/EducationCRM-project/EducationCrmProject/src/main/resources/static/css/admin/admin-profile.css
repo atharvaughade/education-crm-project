@@ -1,0 +1,124 @@
+/* ===================================================
+                PROFILE PAGE STYLES
+=================================================== */
+.profile-content {
+	padding: 30px;
+}
+
+/* Profile Banner */
+.profile-banner {
+	background: linear-gradient(135deg, #2563eb, #1e40af);
+	border-radius: 18px;
+	padding: 40px;
+	color: white;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	margin-bottom: 30px;
+	box-shadow: 0 10px 35px rgba(37, 99, 235, .15);
+}
+
+.profile-avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 4px solid white;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+}
+
+.profile-info h2 {
+	margin: 0 0 8px 0;
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.profile-info .role-badge {
+	display: inline-block;
+	background: rgba(255, 255, 255, .2);
+	padding: 6px 16px;
+	border-radius: 20px;
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 8px;
+}
+
+/* Info Cards */
+.profile-card {
+	background: white;
+	border-radius: 18px;
+	padding: 30px;
+	box-shadow: 0 10px 30px rgba(15, 23, 42, .06);
+	margin-bottom: 30px;
+}
+
+.profile-card h5 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #0f172a;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #e2e8f0;
+}
+
+.info-row {
+	display: flex;
+	justify-content: space-between;
+	padding: 12px 0;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.info-row:last-child {
+	border-bottom: none;
+}
+
+.info-label {
+	color: #64748b;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.info-value {
+	color: #0f172a;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* Stat Card */
+.stat-box {
+	text-align: center;
+	padding: 20px;
+}
+
+.stat-box h3 {
+	font-size: 32px;
+	font-weight: 700;
+	color: #2563eb;
+	margin: 0;
+}
+
+.stat-box p {
+	color: #64748b;
+	font-size: 14px;
+	margin: 8px 0 0 0;
+}
+
+/* Security Form */
+.security-form .form-control {
+	height: 50px;
+	border-radius: 10px;
+	border: 1px solid #e2e8f0;
+	padding: 0 18px;
+	font-size: 15px;
+}
+
+.security-form .form-control:focus {
+	border-color: #2563eb;
+	box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+}
+
+.security-form .form-label {
+	font-weight: 600;
+	color: #334155;
+	margin-bottom: 8px;
+}
